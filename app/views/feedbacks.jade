@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h3.
+		Feedbacks
+	ul
+		each feedback, f in feedbacks
+			li#feedbacks_item
+				a(href="#") #{feedback.review} stars
