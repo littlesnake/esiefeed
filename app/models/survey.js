@@ -23,6 +23,11 @@ var surveySchema = mongoose.Schema({
 
 var Survey = module.exports = mongoose.model('Survey', surveySchema);
 
+// Get single survey
+module.exports.getSurvey = function(surveyId, callback, limit) {
+	Survey.findOne().where('_id').equals(surveyId).limit(limit).exec(callback);
+};
+
 // Get Survey
 module.exports.getSurveys = function(callback, limit) {
 	Survey.find(callback).limit(limit);

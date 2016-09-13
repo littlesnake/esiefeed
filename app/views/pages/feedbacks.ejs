@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="row">
+            
+            <div class="col-sm-9">
+                <div class="jumbotron">
+
+                    <h3>Feedbacks</h3>
+                    <ul>
+                        <%= survey.title %>
+                        <% feedbacks.forEach(function(feedback) { %>
+                            <li>
+                                <% feedback.answers.forEach(function(answer) { %>
+                                    <li>
+                                        <%= answer.reply %>
+                                    </li>
+                                <% }); %>
+                            </li>
+                        <% }); %> 
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                
+                <div class="well">
+                    <h4>Recent Feedbacks</h4>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>
