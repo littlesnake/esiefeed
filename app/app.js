@@ -70,11 +70,12 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3000, function(err) {
+var port = Number(process.env.PORT || 4000);
+app.listen(port, function(err) {
   if (err) {
-    console.log("Cannot run!");
+    console.log("Cannot run on port " + port + "!");
   }
-  console.log("Listening to port 3000!");
+  console.log("Listening to port " + port + "!");
 });
 
 module.exports = app;
